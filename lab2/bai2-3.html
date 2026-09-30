@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tea Station - Lab 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            color: #111;
+        }
+
+        /* ===== MÀN HÌNH 1: FEATURES ===== */
+        .feature_item {
+            width: 25%;
+            background-color: rgb(75, 95, 209);
+            margin-bottom: 12px;
+            padding: 12px;
+            box-sizing: border-box;
+        }
+        .feature_item h4 {
+            margin: 0 0 6px 0;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .feature_item p {
+            margin: 0;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+
+        /* ===== BÀI 2 & MÀN HÌNH 2: ABOUT ===== */
+        .about_left, .about_right {
+            width: 50%;
+            background-color: rgb(183, 241, 198);
+            box-sizing: border-box;
+        }
+        .about_left img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            display: block;
+        }
+        .about_content {
+            padding: 24px;
+        }
+        .heading_first {
+            color: #20d15b;
+            font-size: 40px;
+            font-family: serif;
+            margin: 0 0 8px 0;
+            font-weight: bold;
+        }
+        .heading_second {
+            color: #2c2c2c;
+            font-size: 44px;
+            font-family: serif;
+            font-weight: bold;
+            margin: 0 0 16px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .about__text {
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0 0 14px 0;
+        }
+        .btn.margin-top--medium {
+            display: inline-block;
+            margin-top: 10px;
+            color: rgb(179, 209, 46);
+            text-decoration: underline;
+            font-size: 14px;
+        }
+
+        /* ===== MÀN HÌNH 3: PRODUCT ===== */
+        .product_item {
+            width: 30%;
+            background-color: rgb(215, 255, 122);
+            margin-bottom: 12px;
+            padding: 12px;
+            box-sizing: border-box;
+            color: #000;
+        }
+        .product_item h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .product_item p {
+            margin: 0 0 12px 0;
+            font-size: 13px;
+            line-height: 1.4;
+        }
+        .product_item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            margin-bottom: 8px;
+        }
+        .product_item .price {
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Yêu cầu: Màn hình 1 -->
+    <a href="#features" style="color: blue; text-decoration: underline; font-weight: bold;">CONTACT</a>
+    <div id="features" style="margin-top: 10px; margin-bottom: 40px;">
+        <div class="feature_item">
+            <h4>Made with love</h4>
+            <p>Our tea is made with love, from the collection of the leaves to the brewing.</p>
+        </div>
+        <div class="feature_item">
+            <h4>Relaxation</h4>
+            <p>Set aside anxiety and relax after a hard day with a cup of hot tea in your hands.</p>
+        </div>
+        <div class="feature_item">
+            <h4>Energy</h4>
+            <p>Our tea will energize you with vitamins and invigorate the rest of the day.</p>
+        </div>
+        <div class="feature_item">
+            <h4>Family recipe</h4>
+            <p>All our recipes are passed down from generation to generation for a long time.</p>
+        </div>
+    </div>
+
+    <!-- Yêu cầu: Bài 2 & Màn hình 2 -->
+    <div id="about" style="margin-bottom: 40px;">
+        <div class="about_left">
+            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=800&q=80" alt="About Us">
+        </div>
+        <div class="about_right">
+            <div class="about_content">
+                <h3 class="heading_first">About Our</h3>
+                <h2 class="heading_second">TEA STATION</h2>
+                <p class="about__text">
+                    Once upon a time we only had a couple of teapots and enjoyed tea only with our family. Over time, we were able to afford to buy a small tea plantation
+                </p>
+                <p class="about__text">
+                    Now we have a whole teahouse and we delight many people with delicious and hot tea. We serve black long tea, relaxing green and jasmine tea, tea with spices and many others.
+                </p>
+                <a href="#features" class="btn margin-top--medium">Learn more</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Yêu cầu: Màn hình 3 -->
+    <div id="product">
+        <div class="product_item">
+            <h3>OUR PRODUCTS</h3>
+            <p>Our assortment includes long tea, relaxing and invigorating green tea with spices, lemon juice, jasmine, cinnamon and anise, milk tea and many others.</p>
+            <a href="#" style="color: blue; text-decoration: underline;">Inventory</a>
+        </div>
+        <div class="product_item">
+            <img src="https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=600&q=80" alt="Black Long Tea">
+            <div class="price">
+                BLACK LONG TEA<br>
+                $ 3.99
+            </div>
+        </div>
+        <div class="product_item">
+            <img src="https://images.unsplash.com/photo-1597481499750-3e6b22637e12?auto=format&fit=crop&w=600&q=80" alt="Green Tea with Jasmine">
+            <div class="price">
+                GREEN TEA WITH JASMINE<br>
+                $ 4.99
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

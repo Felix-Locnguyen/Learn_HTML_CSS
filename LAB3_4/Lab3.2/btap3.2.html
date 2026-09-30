@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3.2 - CSS Units & Typography</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&family=Grand+Hotel&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- CSS Reset & Base Units --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            /* 62.5% của 16px = 10px -> 1rem = 10px */
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Catamaran", sans-serif;
+            color: #3a3e3b;
+            line-height: 1.5;
+            background-color: #fff;
+        }
+
+        /* --- Navigation Menu --- */
+        .nav__list {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            padding: 2rem 1rem;
+            background-color: #fff;
+        }
+
+        .nav__link {
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: 0.3rem;
+            color: #3a3e3b;
+            transition: color 0.2s ease;
+        }
+
+        .nav__link:hover {
+            color: #698f3f;
+        }
+
+        /* --- Banner / Header --- */
+        .header {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background-color: #e5e5e5;
+            padding: 4rem 2rem;
+            gap: 1.5rem;
+        }
+
+        .header h2 {
+            font-family: "Grand Hotel", cursive;
+            font-size: 3.2rem;
+            color: #698f3f;
+            letter-spacing: 0.84rem;
+            font-weight: 400;
+        }
+
+        .header h1 {
+            text-transform: uppercase;
+            color: #fff;
+            font-size: 5.6rem;
+            letter-spacing: 0.7rem;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* --- Reusable Components (Buttons & Headings) --- */
+        .btn {
+            display: inline-block;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.2rem;
+            padding: 1.2rem 2.4rem;
+            border: 2px solid #3a3e3b;
+            color: #3a3e3b;
+            background-color: transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #3a3e3b;
+            color: #fff;
+        }
+
+        .heading_first {
+            font-family: "Grand Hotel", cursive;
+            font-size: 3rem;
+            color: #698f3f;
+            letter-spacing: 0.84rem;
+            font-weight: 400;
+        }
+
+        .heading_second {
+            font-size: 3.4rem;
+            text-transform: uppercase;
+            color: #3a3e3b;
+            margin-bottom: 1.5rem;
+        }
+
+        .heading-second--white {
+            color: #fff;
+        }
+
+        /* --- Section: Features --- */
+        #features {
+            display: flex;
+            justify-content: space-between;
+            gap: 2.5rem;
+            max-width: 1200px;
+            margin: 6rem auto;
+            padding: 0 2rem;
+        }
+
+        .feature_item {
+            flex: 1;
+            text-align: center;
+        }
+
+        .feature__title {
+            text-transform: uppercase;
+            font-size: 1.6rem;
+            letter-spacing: 0.5rem;
+            color: #698f3f;
+            margin-bottom: 1rem;
+        }
+
+        .feature__text {
+            font-size: 1.5rem;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        /* --- Section: Products --- */
+        #product {
+            background-color: #3a3e3b;
+            padding: 8rem 2rem;
+        }
+
+        .product__container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .product_item {
+            flex: 1;
+            text-align: center;
+        }
+
+        .product_item--intro {
+            text-align: left;
+        }
+
+        .products__text {
+            color: #ddd;
+            font-size: 1.6rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+
+        .product-item__img {
+            width: 100%;
+            max-width: 260px;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 4px;
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+
+        .product-item__title {
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 1.8rem;
+            letter-spacing: 0.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .product-item__price {
+            font-family: "Grand Hotel", cursive;
+            font-size: 2.6rem;
+            color: #698f3f;
+            font-weight: 700;
+        }
+
+        .product-item__price span {
+            margin-right: 0.4rem;
+            font-size: 2.8rem;
+            font-weight: 400;
+        }
+
+        /* Responsive Layout */
+        @media (max-width: 900px) {
+            #features, .product__container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .product_item--intro {
+                text-align: center;
+            }
+
+            .nav__list {
+                flex-wrap: wrap;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Menu -->
+    <ul class="nav__list">
+        <li class="nav__item"><a href="#features" class="nav__link">Features</a></li>
+        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+        <li class="nav__item"><a href="#product" class="nav__link">Products</a></li>
+        <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+        <li class="nav__item"><a href="#contacts" class="nav__link">Contacts</a></li>
+    </ul>
+
+    <!-- Banner -->
+    <header class="header">
+        <h2>Over one hundred flavors of tea</h2>
+        <h1>Specially crafted tea</h1>
+        <a href="#product" class="btn">Explore</a>
+    </header>
+
+    <!-- Features -->
+    <section id="features">
+        <div class="feature_item">
+            <h4 class="feature__title">Made with love</h4>
+            <p class="feature__text">
+                Our tea is made with love, from the collection of the leaves to the brewing.
+            </p>
+        </div>
+        <div class="feature_item">
+            <h4 class="feature__title">Relaxation</h4>
+            <p class="feature__text">
+                Set aside anxiety and relax after a hard day with a cup of hot tea in your hands.
+            </p>
+        </div>
+        <div class="feature_item">
+            <h4 class="feature__title">Energy</h4>
+            <p class="feature__text">
+                Our tea will energize you with vitamins and invigorate the rest of the day.
+            </p>
+        </div>
+        <div class="feature_item">
+            <h4 class="feature__title">Family recipe</h4>
+            <p class="feature__text">
+                All our recipes are passed down from generation to generation for a long time.
+            </p>
+        </div>
+    </section>
+
+    <!-- Products (Đã gỡ bỏ khối bị paste trùng lặp) -->
+    <section id="product">
+        <div class="product__container">
+            <div class="product_item product_item--intro">
+                <h3 class="heading_first">Check Out</h3>
+                <h2 class="heading_second heading-second--white">Our products</h2>
+                <p class="products__text">
+                    Our assortment includes long tea, relaxing and invigorating green tea with spices, lemon juice, jasmine, cinnamon and anise, milk tea and many others.
+                </p>
+                <a href="#" class="btn" style="border-color: #fff; color: #fff;">Inventory</a>
+            </div>
+
+            <div class="product_item">
+                <img src="https://images.unsplash.com/photo-1576092762791-dd9e2220abd4?w=500&q=80" class="product-item__img" alt="Black long tea">
+                <h5 class="product-item__title">Black long tea</h5>
+                <p class="product-item__price"><span>$</span>3.99</p>
+            </div>
+
+            <div class="product_item">
+                <img src="https://images.unsplash.com/photo-1627435601361-ec25f5b1d0e5?w=500&q=80" class="product-item__img" alt="Green tea with jasmine">
+                <h5 class="product-item__title">Green tea with jasmine</h5>
+                <p class="product-item__price"><span>$</span>4.99</p>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

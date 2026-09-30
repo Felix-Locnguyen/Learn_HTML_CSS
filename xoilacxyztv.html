@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 1</title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            padding: 20px;
+        }
+
+        table {
+            width: 100%;
+            max-width: 650px;
+            border-collapse: collapse;
+            border: 2px solid #6aa84f; /* Viền ngoài màu xanh lá */
+            margin: 0 auto;
+        }
+
+        th, td {
+            border: 2px solid #6aa84f; /* Viền các ô bên trong */
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Hàng tiêu đề trên cùng */
+        .header-main th {
+            background-color: #6aa84f;
+            color: #000;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Hàng Vòng chung kết U19 châu Á 2016 */
+        .sub-header {
+            background-color: #eaf5e6;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* Căn chỉnh 2 đội bóng và dấu phân cách ở giữa */
+        .match-teams {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .match-teams span {
+            flex: 1;
+        }
+
+        .separator {
+            flex: 0 0 30px !important;
+            color: #555;
+            font-style: italic;
+        }
+        .highlight-red {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <!-- Hàng 1: Đúng 3 thẻ th -->
+    <tr class="header-main">
+        <th>Thời gian</th>
+        <th>Trận đấu</th>
+        <th>Trực tiếp</th>
+    </tr>
+
+    <!-- Hàng 2: colspan là 3 -->
+    <tr class="sub-header">
+        <td colspan="3">Vòng chung kết U19 châu Á 2026</td>
+    </tr>
+
+   
+    <tr>
+        <td>17/10<br>20:30</td>
+        <td>
+            <div class="match-teams">
+                <span class="highlight-red">U19 Việt Nam</span>
+                <span class="separator">vs</span>
+                <span>U19 Hàn Quốc</span>
+            </div>
+        </td>
+        <td style="color: red; font-weight: bold;">XoilacTV</td>
+    </tr>
+
+    
+    <tr>
+        <td>17/10<br>20:30</td>
+        <td>
+            <div class="match-teams">
+                <span>U19 Trung Quốc</span>
+                <span class="separator">vs</span>
+                <span>U19 Nhật Bản</span>
+            </div>
+        </td>
+        <td style="color: blue; font-weight: bold;">SocoliveTV</td>
+    </tr>
+
+    
+    <tr>
+        <td>17/10<br>23:30</td>
+        <td>
+            <div class="match-teams">
+                <span>U19 Thái Lan</span>
+                <span class="separator">vs</span>
+                <span>U19 Qatar</span>
+            </div>
+        </td>
+        <td style="color: orange; font-weight: bold;">BongdaplusTV</td>
+    </tr>
+
+    
+    <tr>
+        <td>17/10<br>23:30</td>
+        <td>
+            <div class="match-teams">
+                <span>U19 Indonesia</span>
+                <span class="separator">vs</span>
+                <span>U19 Saudi Arabia</span>
+            </div>
+        </td>
+        <td style="color: gold; font-weight: bold;">SBTCSoccer</td>
+    </tr>
+</table>

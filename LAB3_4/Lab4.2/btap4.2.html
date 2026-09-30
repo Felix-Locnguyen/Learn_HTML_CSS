@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 4.2 - Selectors & Hover</title>
+    <style>
+        /* CSS Cơ bản */
+        @import url("https://fonts.googleapis.com/css?family=Catamaran:400,700|Grand+Hotel");
+        
+        html {
+            font-size: 62.6%;
+        }
+        
+        body {
+            font-family: "Catamaran", sans-serif;
+            background-color: #e5e5e5;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* =========================================
+           BÀI 1: ỨNG DỤNG HOVER CHO NAV, FEATURES, BTN 
+           ========================================= */
+
+        /* --- Màn hình 1: Hover cho Nav --- */
+        .nav {
+            border: 1px solid red;
+            width: 30rem;
+            margin: 3rem auto;
+            background-color: #e5e5e5;
+        }
+
+        .nav__list {
+            list-style: none;
+            padding: 5rem;
+            margin: 0;
+        }
+
+        .nav__item {
+            margin-bottom: 1.5rem;
+        }
+
+        .nav__link:link, .nav__link:visited {
+            font-family: "Catamaran", sans-serif;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 2.4rem;
+            font-weight: 700;
+            letter-spacing: calc(0.7rem - 0.4rem);
+            color: #3a3e3b;
+            display: inline-block; /* Giúp padding/border hoạt động mượt hơn */
+            transition: all 0.3s ease; /* Thêm hiệu ứng chuyển đổi mượt mà */
+        }
+
+        .nav__link:hover {
+            background: #beed8c;
+            color: #678e3e;
+            padding-left: 1.5rem;
+            border-left: 0.25rem solid #678e3e;
+        }
+
+        /* --- Màn hình 2: Hover cho Features --- */
+        #features {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #fff;
+            padding: 5rem 0;
+        }
+
+        .feature_item {
+            border: 1px solid red;
+            width: 25%;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-bottom: 0; /* Xóa margin để các khung dính sát nhau như mẫu */
+            transition: all 0.3s ease;
+        }
+
+        .feature__title {
+            text-transform: uppercase;
+            font-size: 1.6rem;
+            letter-spacing: 0.5rem;
+            color: #698f3f;
+            margin-bottom: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .feature__text {
+            font-size: 1.6rem;
+            color: #3a3e3b;
+            line-height: 1.5;
+        }
+
+        .feature_item:hover {
+            background-color: #698f3f;
+        }
+
+        .feature_item:hover .feature__title {
+            color: #fff;
+        }
+
+        /* --- Màn hình 3: Hover cho Button (Banner) --- */
+        .header {
+            background: url('https://images.unsplash.com/photo-1576092762791-dd9e2220abd4?w=1000&q=80') center/cover;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 5rem;
+        }
+
+        .header h2 {
+            font-family: "Grand Hotel", cursive;
+            font-size: 4rem;
+            color: #698f3f;
+            letter-spacing: 0.84rem;
+            margin-bottom: 1rem;
+        }
+
+        .header h1 {
+            text-transform: uppercase;
+            color: #fff;
+            font-size: 6rem;
+            letter-spacing: 0.7rem;
+            margin-bottom: 4rem;
+        }
+
+        .btn:link, .btn:visited {
+            color: #3a3e3b;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 1.4rem;
+            font-weight: 700;
+            background-color: #698f3f;
+            outline: 3px solid #698f3f;
+            outline-offset: 4px;
+            padding: 1rem 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #4b6630;
+            outline-color: #4b6630;
+            outline-width: 5px;
+            color: #e5e5e5;
+        }
+
+
+        /* =========================================
+           BÀI 2: TẠO GIAO DIỆN "OUR SERVICES" MẪU
+           ========================================= */
+        #services {
+            padding: 5rem 0;
+            text-align: center;
+            background-color: #e5e5e5;
+        }
+
+        .heading_first {
+            font-family: "Grand Hotel", cursive;
+            font-size: 3rem;
+            color: #698f3f;
+            margin: 0 0 1rem 0;
+            letter-spacing: 0.2rem;
+        }
+
+        .heading_second {
+            font-size: 3.4rem;
+            text-transform: uppercase;
+            color: #3a3e3b;
+            margin: 0 0 5rem 0;
+            letter-spacing: 0.2rem;
+        }
+
+        .service-card {
+            width: 70%;
+            max-width: 700px;
+            margin: 0 auto 5rem auto;
+            border: 2px solid #698f3f;
+            border-radius: 2rem;
+            overflow: hidden; /* Cắt phần góc ảnh bị tràn ra ngoài viền bo tròn */
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ nhẹ theo hình mẫu */
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .service-info {
+            background-color: #7b9e4a;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .service-title {
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        .service-btn {
+            background-color: #e5e5e5;
+            color: #3a3e3b;
+            text-decoration: none;
+            padding: 1rem 2.5rem;
+            border-radius: 0.5rem;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-transform: capitalize;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .service-btn:hover {
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Màn hình 1: Nav Hover -->
+    <div class="nav">
+        <ul class="nav__list">
+            <li class="nav__item"><a href="#" class="nav__link">Features</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">About</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Products</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Services</a></li>
+            <li class="nav__item"><a href="#" class="nav__link">Contacts</a></li>
+        </ul>
+    </div>
+
+    <!-- Màn hình 2: Features Hover -->
+    <div id="features">
+        <div class="feature_item">
+            <h4 class="feature__title">Made with love</h4>
+            <p class="feature__text">Our tea is made with love, from the collection of the leaves to the brewing.</p>
+        </div>
+        <div class="feature_item">
+            <h4 class="feature__title">Relaxation</h4>
+            <p class="feature__text">Set aside anxiety and relax after a hard day with a cup of hot tea in your hands.</p>
+        </div>
+        <div class="feature_item">
+            <h4 class="feature__title">Energy</h4>
+            <p class="feature__text">Our tea will energize you with vitamins and invigorate the rest of the day.</p>
+        </div>
+    </div>
+
+    <!-- Màn hình 3: Button Hover -->
+    <div class="header">
+        <h2>Over one hunred flavors of tea</h2>
+        <h1>Specially crafted tea</h1>
+        <a href="#about" class="btn">Explore</a>
+    </div>
+
+    <!-- Bài 2: Tạo như mẫu Our Services -->
+    <div id="services">
+        <h3 class="heading_first">Explore</h3>
+        <h2 class="heading_second">Our Services</h2>
+
+        <!-- Thẻ Dịch vụ 1 -->
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8c011?w=800&q=80" alt="Custom Recipe Service">
+            <div class="service-info">
+                <div class="service-title">Custom Recipe Service</div>
+                <a href="#" class="service-btn">Read More</a>
+            </div>
+        </div>
+
+        <!-- Thẻ Dịch vụ 2 -->
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1526367790999-0150786686a2?w=800&q=80" alt="Home Delivery Service">
+            <div class="service-info">
+                <div class="service-title">Home Delivery Service</div>
+                <a href="#" class="service-btn">Read More</a>
+            </div>
+        </div>
+
+        <!-- Thẻ Dịch vụ 3 -->
+        <div class="service-card">
+            <img src="https://images.unsplash.com/photo-1597481499750-3e6b22637e12?w=800&q=80" alt="Tea Aging Service">
+            <div class="service-info">
+                <div class="service-title">Tea Aging Service</div>
+                <a href="#" class="service-btn">Read More</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

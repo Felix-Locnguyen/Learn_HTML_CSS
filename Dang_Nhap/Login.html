@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Đăng Ký</title>
+</head>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #eef2f5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+    }
+    form {
+        background: #fff;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        width: 380px;
+    }
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+
+    }
+    label {
+        font-weight: bold;
+        margin-top: 12px;
+        display: block;
+    }
+    input[type="text"], textarea, select, input[type="file"] {
+        width: 100%;
+        padding: 8px;
+        margin-top: 6px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+    .radio-group, .checkbox-group {
+        display: flex; /* xếp theo chiều ngang*/
+        /* display: block; /* xếp theo chiều dọc */
+        /* flex-direction: row; */
+        gap: 10px; /* khoảng cách giữa các phần tử */
+        margin-top: 6px;
+    }
+    .radio-group label, .checkbox-group label {
+        font-weight: normal;
+        margin-right: 15px;
+    }
+    button {
+        margin-top: 18px;
+        padding: 10px 16px;
+        border: none;
+        border-radius:40px;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    button[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+    }
+    button[type="reset"] {
+      background-color: #f44336;
+      color: white;
+      margin-left: 10px;
+    }
+
+    .actions {
+      text-align: center;
+    }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="name">Họ và tên:</label>
+        <input type="text" id="name" name="name" placeholder="Nhập Họ và tên của bạn">
+        
+        <label> Giới Tính </label>
+        <div class="radio_group">
+            <input type="radio" id="male" name="gender" value="Nam">Nam
+            <input type="radio" id="female" name="gender" value="Nữ">
+            Nữ
+        </div>
+
+        <label for="nationality">Quốc tịch:</label>
+        <select id="nationality" name="nationality">
+            <option value="vn">Việt Nam</option>
+            <option value="us">Hoa Kỳ</option>
+            <option value="jp">Nhật Bản</option>
+            <option value="fr">Pháp</option>
+        </select>
+
+        <label>Sở thích</label>
+        <div class="checkbox_group">
+            <input type="checkbox" id="reading" name="hobby" value="Đọc sách"> Đọc sách
+            <input type="checkbox" id="touring" name="hobby" value="Du lịch"> Du lịch
+            <input type="checkbox" id="music" name="hobby" value="Âm nhạc"> Âm nhạc
+            <input type="checkbox" id="food" name="hobby" value="Ẩm thực"> Ẩm thực
+        </div>
+
+        <label for="note">Ghi chú:</label>
+        <textarea id="note" name="note" rows="5" placeholder="Nhập ghi chú của bạn"></textarea>
+        <button type="submit">Đăng Ký</button>
+        <button type="reset">Nhập Lại</button>
+    </form>
+</body>
+</html>

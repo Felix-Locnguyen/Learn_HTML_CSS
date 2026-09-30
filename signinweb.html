@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FPT POLYTECHNIC HCM </title>
+    <style>
+        body {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 18px;
+            margin: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+            position: relative; 
+            display: inline-block; 
+        }
+
+        label {
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 200px;
+            padding: 3px;
+            border: 1px solid #7a7a7a;
+            font-size: 16px;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 5px;
+            top: 28px; 
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 12px;
+            color: #555;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-top: 8px;
+            margin-bottom: 12px;
+        }
+
+        .checkbox-group input {
+            margin-right: 8px;
+            transform: scale(1.1);
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #ccc;
+            width: 280px;
+            margin: 10px 0 12px 0;
+            text-align: left;
+        }
+
+        button.login-btn {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 16px;
+            padding: 2px 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <form action="" method="post">
+        
+        <div class="form-group">
+            <label for="username">User Name:</label>
+            <input type="text" id="username" name="username" value="tridmps47311@fpt.edu.vn">
+        </p>
+
+        
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" value="47311@FPLHCM">
+            <button type="button" class="toggle-password" onclick="togglePassword()">Hiện</button>
+        </p>
+
+       
+        <div class="checkbox-group">
+            <input type="checkbox" id="remember" name="remember">
+            <label for="remember" style="display: inline; margin-bottom: 0;">Remember me?</label>
+        </p>
+
+        
+        <hr>
+
+        
+        <button type="submit" class="login-btn">Login</button>
+    </form>
+
+    <script>
+        function togglePassword() {
+            var passwordField = document.getElementById("password");
+            var toggleButton = document.querySelector(".toggle-password");
+            
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                toggleButton.textContent = "Ẩn";
+            } else {
+                passwordField.type = "password";
+                toggleButton.textContent = "Hiện";
+            }
+        }
+    </script>
+
+</body>
+</html>
