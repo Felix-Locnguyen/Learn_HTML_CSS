@@ -1,0 +1,1006 @@
+/* CSS Reset & Global Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #333;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* =========================================
+   1. NAVBAR STYLES
+   ========================================= */
+.navbar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.brand .logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bee-icon {
+  width: 28px;
+  height: 28px;
+  fill: #f5ab1c; /* Flow hive signature yellow */
+}
+
+.logo-text {
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #1a1a1a;
+  display: flex;
+  align-items: flex-start;
+}
+
+.trademark {
+  font-size: 10px;
+  margin-top: 2px;
+  font-weight: 600;
+}
+
+/* Menu links */
+.nav-menu .nav-list {
+  display: flex;
+  list-style: none;
+  gap: 28px;
+}
+
+.nav-menu a {
+  font-size: 14px;
+  font-weight: 500;
+  color: #4a4a4a;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.2s ease;
+}
+
+.nav-menu a:hover {
+  color: #1a1a1a;
+}
+
+.arrow {
+  font-size: 11px;
+  transform: translateY(1px);
+}
+
+/* Nav Actions (Right side) */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-outline {
+  font-size: 13px;
+  font-weight: 500;
+  color: #333;
+  padding: 8px 18px;
+  border: 1px solid #1a1a1a;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+.icon-btn {
+  display: flex;
+  align-items: center;
+  color: #333;
+  transition: opacity 0.2s ease;
+}
+
+.icon-btn:hover {
+  opacity: 0.7;
+}
+
+.icon-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.cart-btn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.cart-count {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* =========================================
+   2. HERO SECTION STYLES
+   ========================================= */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 70px; /* Bù chiều cao header */
+}
+
+/* Lớp phủ tối gradient nhẹ để chữ trắng nổi bật */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg, 
+    rgba(0, 0, 0, 0.45) 0%, 
+    rgba(0, 0, 0, 0.25) 45%, 
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  margin-left: 8%;
+  padding: 40px 20px;
+  color: #ffffff;
+}
+/* Khối nội dung */
+.hero-content-v2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Kéo chính xác tâm khối về giữa */
+  z-index: 2;
+  color: #ffffff;
+  text-align: center;
+  
+  /* Căn giữa và xếp dọc các phần tử bên trong (h1, p, button) */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px; /* Khoảng cách giữa tiêu đề, tác giả và nút bấm */
+  width: 90%;
+  max-width: 800px;
+}
+
+.subtitle {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.headline {
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 24px;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.description {
+  font-size: 17px;
+  line-height: 1.55;
+  font-weight: 400;
+  margin-bottom: 34px;
+  color: #f3f3f3;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Nút CTA vàng bo tròn */
+.btn-primary {
+  display: inline-block;
+  background-color: #f5ab1c;
+  color: #1a1a1a;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  padding: 14px 28px;
+  border-radius: 999px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary:hover {
+  background-color: #e09914;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   3. CHAT WIDGET
+   ========================================= */
+.chat-widget {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: #f5ab1c;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  z-index: 99;
+  transition: transform 0.2s ease;
+}
+
+.chat-widget:hover {
+  transform: scale(1.08);
+}
+
+.chat-widget svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Container chính bao phủ toàn bộ khung nhìn */
+.video-hero-container {
+    position: relative; /* Cần thiết để các thành phần con dùng absolute */
+    width: 100%;
+    height: 100vh; /* 100% chiều cao của khung nhìn (viewport height) */
+    overflow: hidden; /* Cắt bỏ phần video thừa tràn ra ngoài */
+    display: flex;
+    align-items: center; /* Căn giữa nội dung theo chiều dọc */
+}
+
+/* Thẻ video: Làm cho nó lấp đầy container mà không bị méo */
+.back-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* QUAN TRỌNG: Cắt và lấp đầy khung hình mà không làm mất tỷ lệ */
+    z-index: 0; /* Đẩy video xuống dưới cùng */
+}
+
+/* ------------------------------------------------------------------------------------------------------------- */
+/* sestion 2 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #2b2b2b;
+  background-color: #ffffff;
+}
+
+/* =========================================
+   CONTAINER & SECTION LAYOUT
+   ========================================= */
+.getting-started-section {
+  width: 100%;
+  padding: 70px 24px;
+}
+
+
+.container {
+  height: 600px;
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+.container-reverse {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    display:flex;
+    flex-direction:row-reverse;
+}
+/* =========================================
+   CỘT TRÁI: DANH SÁCH BƯỚC
+   ========================================= */
+.steps-column {
+  flex: 1;
+  max-width: 520px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #222222;
+  margin-bottom: 38px;
+  letter-spacing: -0.5px;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-bottom: 38px;
+}
+
+.step-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+}
+
+/* Badge số thứ tự màu đen tròn */
+.step-badge {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+  background-color: #000000;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 19px;
+  font-weight: 800;
+  margin-top: 2px;
+}
+
+.step-content {
+  flex: 1;
+}
+
+.step-heading {
+  font-size: 21px;
+  font-weight: 700;
+  color: #262626;
+  margin-bottom: 8px;
+  letter-spacing: -0.3px;
+}
+
+.step-desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: #555555;
+}
+
+/* Nút bấm CTA màu vàng bo tròn */
+.btn-cta {
+  display: inline-block;
+  background-color: #f7b733;
+  color: #1a1a1a;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.btn-cta:hover {
+  background-color: #e5a420;
+  transform: translateY(-5px); /*khi ấn sẽ nhích lên*/
+}
+
+/* =========================================
+   CỘT PHẢI: VIDEO CARD
+   ========================================= */
+.video-column {
+  flex: 1.1;
+  display: flex;
+  justify-content: center;
+}
+
+.video-card {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  height: 520px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.1);
+}
+
+.video-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: #2b2b2b;
+  background-color: #ffffff;
+}
+
+/* =========================================
+   PHẦN TIÊU ĐỀ
+   ========================================= */
+.reviews-section {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 24px;
+}
+
+.reviews-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+}
+
+.rating-sub {
+  font-size: 13.5px;
+  color: #666666;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 14px;
+  letter-spacing: -0.3px;
+}
+
+.section-subtitle {
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.5;
+}
+
+/* =========================================
+   KHUNG CHỨA CARDS & NÚT TIẾP THEO
+   ========================================= */
+.cards-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+/* Kiểu dáng từng Card */
+.review-card {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Phần hiển thị ảnh */
+.card-media {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background-color: #f7f7f7;
+}
+
+.card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Khung ghép 4 ảnh nhỏ (Card 2) */
+.grid-media {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 2px;
+}
+
+.grid-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Nội dung văn bản bên dưới ảnh */
+.card-body {
+  padding: 24px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 12px;
+  line-height: 1.35;
+  min-height: 42px; /* Đảm bảo chiều cao đồng đều khi tiêu đề dài ngắn khác nhau */
+}
+
+.card-text {
+  font-size: 13.5px;
+  color: #555555;
+  line-height: 1.5;
+  margin-bottom: 10px;
+  flex-grow: 1;
+}
+
+.read-more {
+  display: inline-block;
+  font-size: 12.5px;
+  color: #888888;
+  text-decoration: underline;
+  margin-bottom: 24px;
+  transition: color 0.2s;
+}
+
+.read-more:hover {
+  color: #1a1a1a;
+}
+
+/* Tên tác giả & tick xác nhận */
+.author-info {
+  margin-top: auto;
+}
+
+.author-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #1a1a1a;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.check-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  background-color: #f7b733; /* Màu vàng cam tròn */
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 9px;
+  font-weight: bold;
+}
+
+.verified {
+  display: block;
+  font-size: 11.5px;
+  color: #999999;
+  margin-top: 2px;
+}
+
+/* Nút mũi tên chuyển hướng màu vàng */
+.nav-arrow {
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  background-color: #f7b733;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(247, 183, 51, 0.4);
+  transition: transform 0.2s, background-color 0.2s;
+  z-index: 10;
+}
+
+.nav-arrow svg {
+  width: 18px;
+  height: 18px;
+  stroke: #ffffff;
+}
+
+.nav-arrow:hover {
+  background-color: #e5a420;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.container-video-reviews{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.video-card-reviews{
+    border-radius: 25px ;
+    height: 500px;
+    width: 400px;
+}
+
+
+.img-column{
+    border-radius: 25px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Tiêu đề & Giới thiệu */
+.header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+}
+
+.header h1 {
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.header p {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+.header a {
+  color: #333;
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+/* Lưới chứa 3 thẻ sản phẩm */
+.bundle-grid {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 24px;
+  max-width: 1050px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+/* Thẻ sản phẩm cơ bản */
+.card {
+  background-color: #fcfbf7;
+  border: 1px solid #ece7dc;
+  border-radius: 16px;
+  width: 320px;
+  padding: 24px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Thẻ nổi bật ở giữa */
+.card.highlighted {
+  background-color: #fdf5df;
+  border: 1px solid #f2dfa9;
+}
+
+/* Nhãn trên cùng (Pill badge) */
+.pill-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #dedede;
+  color: #444;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 4px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+
+
+/* Khu vực hình ảnh minh họa */
+.product-images {
+  height: 280;
+  width: 280px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #e2ded5;
+  color: #aaa;
+}
+
+/* Nội dung chi tiết */
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.pricing {
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.original-price {
+  text-decoration: line-through; /*hiệu ứng gạch ngnga*/
+  color: #888;
+  margin: 0 4px;
+}
+
+
+
+
+/* Danh sách tính năng */
+.feature-list {
+  list-style: none;
+  font-size: 11px;
+  color: #555;
+  margin-bottom: 24px;
+  flex-grow: 1; /* Giúp các nút BUY NOW luôn thẳng hàng đáy */
+}
+
+.feature-list li {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+
+/* Nút bấm mua */
+.btn-buy {
+  background-color: #2b3035;
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  padding: 10px 0;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-buy:hover {
+  background-color: #1a1e21;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  width: 100%;
+  max-width: 900px;
+  margin: 50px auto; /* Đảm bảo căn giữa trục ngang */
+}
+
+/* Cột ảnh chú ong */
+.bee-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.bee-img {
+  max-width: 260px;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Khối form nhập liệu */
+.contact-form {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 420px;
+}
+
+/* Các ô input, select, textarea */
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  background-color: #ffffff;
+  border: 1px solid #d5d1c8;
+  padding: 12px 18px;
+  font-size: 13px;
+  color: #333333;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Bo góc dạng pill cho ô input ngắn */
+.contact-form input {
+  border-radius: 24px;
+}
+
+/* Ô dropdown select */
+.contact-form select {
+  border-radius: 6px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23888888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 14px;
+  cursor: pointer;
+}
+
+/* Ô nhập Message đa dòng */
+.contact-form textarea {
+  border-radius: 18px;
+  resize: vertical;
+}
+
+/* Placeholder mờ nhẹ */
+.contact-form ::placeholder {
+  color: #757575;
+}
+
+/* Hiệu ứng khi bấm vào ô nhập */
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #e5a924;
+  box-shadow: 0 0 0 2px rgba(229, 169, 36, 0.2);
+}
+
+/* Nút SEND màu vàng cam đặc trưng */
+.btn-send {
+  align-self: flex-start;
+  background-color: #f7a81b;
+  color: #ffffff;
+  border: none;
+  padding: 10px 32px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-send:hover {
+  background-color: #df9411;
+}
+
+.btn-send:active {
+  transform: scale(0.98);
+}
+
